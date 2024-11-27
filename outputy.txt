@@ -1,0 +1,28 @@
+Contact records:
+  Gerald had contact with Paolo
+  Jack had contact with Gerald, Robert
+  Karl had contact with Shay, Mario
+  Lonnie had contact with Gerald, Jack, William III
+  Mario had contact with Paolo
+  Olly had contact with Mario
+  Robert had contact with Paolo
+  Shay had contact with Mario
+  William III had contact with Robert, Mario
+
+Patient zeros: Karl, Lonnie, Olly
+Potential zombies: Paolo
+Neither patient zero nor potential zombie: Shay, Robert, William III, Jack, Mario, Gerald
+Most viral people: Lonnie
+Most contacted people: Mario
+
+Maximum distance from a potential zombie:
+Karl: 3
+Lonnie: 3
+Shay: 2
+William III: 2
+Olly: 2
+Jack: 2
+Robert: 1
+Mario: 1
+Gerald: 1
+Paolo: 0
