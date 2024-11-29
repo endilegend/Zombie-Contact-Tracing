@@ -10,8 +10,8 @@ Contact records:
   Zach had contact with Philip
 
 Patient zeros: Bob, Farley, Larry
-Potential zombies: Sarai, Philip
-Neither patient zero nor potential zombie: Leanne, Zach, Mark, Will, Carol, Paul
+Potential zombies: Philip, Sarai
+Neither patient zero nor potential zombie: Carol, Leanne, Mark, Paul, Will, Zach
 Most viral people: Bob
 Most contacted people: Mark, Leanne
 
@@ -21,8 +21,8 @@ Bob: 4
 Farley: 3
 Will: 3
 Carol: 3
-Mark: 2
 Paul: 2
+Mark: 2
 Leanne: 1
 Zach: 1
 Sarai: 0
