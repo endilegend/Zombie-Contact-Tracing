@@ -2,10 +2,44 @@ zeros = []
 potential = []
 neither = []
 everyone = set()
-
+people = {}
+mostContacted = {}
 virality = {}
 spreaders = []
 contacted = []
+spreaderZombie = []
+regularZombies = []
+
+
+
+def regularZombie(people, person, regularZombies):
+    for i in people[person]:
+        if i not in neither or i not in potential:
+            return ""
+        
+    print(f"{people[person]} {person}")
+
+    if len(regularZombies) < 1:
+        regularZombies.append(person)
+        return f"{person}"
+    else:
+        spreaderZombie.append(person)
+        return f", {person}"
+
+def spreaderZombies(people,person,spreaderZombie):
+    for i in people[person]:
+        if i not in potential:
+            return ""
+    if len(spreaderZombie) < 1:
+        spreaderZombie.append(person)
+        return f"\n\nSpearder Zombies: {person}"
+    else:
+        spreaderZombie.append(person)
+        return f", {person}"
+
+
+
+    
 
 def maximumDistance(potential, person, people, visited):
     if person in potential:
@@ -46,10 +80,9 @@ def highestContacted(mostContacted):
     mostContacted = [key for key, value in mostContacted.items() if value == highest]
     return ", ".join(mostContacted)
 
-file = "zombie-input/Dataset5.txt"
+file = "zombie-input/Dataset1.txt"
 
-people = {}
-mostContacted = {}
+
 with open(file, "r") as r, open("outputy.txt", "w") as f:
     f.write("Contact records:\n")
     for line in r:
@@ -91,10 +124,34 @@ with open(file, "r") as r, open("outputy.txt", "w") as f:
     distances = {}
     for person in everyone:
         distances[person] = maximumDistance(potential, person, people, set())
-
     distances = dict(sorted(distances.items(), key = lambda item: item[1], reverse = True))
-    
     for key, value in distances.items():
         f.write(f"{key}: {value}\n")
+    for person in spreaders:
+        f.write(f"{spreaderZombies(people,person, spreaderZombie)}")
 
-print(distances)
+    f.write("\nRegular Zombies: ")
+    for person in people:
+        f.write(f"{regularZombie(people,person, regularZombies)}")
+    if not regularZombies:
+        f.write("None")
+
+    
+    
+
+print(f"{neither}")
+print(potential)
+x = []
+for person in people:
+    x.append(person)
+print(x)
+
+
+print(f"\n\n{people["Mark"]}")
+
+y = []
+for i in people["Mark"]:
+    if i not in neither and i not in potential:
+        print(1)
+    else:
+        print(i)

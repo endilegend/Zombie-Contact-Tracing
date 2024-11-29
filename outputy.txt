@@ -1,28 +1,33 @@
 Contact records:
-  Gerald had contact with Paolo
-  Jack had contact with Gerald, Robert
-  Karl had contact with Shay, Mario
-  Lonnie had contact with Gerald, Jack, William III
-  Mario had contact with Paolo
-  Olly had contact with Mario
-  Robert had contact with Paolo
-  Shay had contact with Mario
-  William III had contact with Robert, Mario
+  Bob had contact with Paul, Mark, Carol, Leanne, Will
+  Carol had contact with Mark, Leanne
+  Farley had contact with Paul
+  Leanne had contact with Sarai
+  Larry had contact with Carol, Mark, Leanne, Will
+  Mark had contact with Philip, Zach
+  Paul had contact with Zach
+  Will had contact with Leanne, Mark
+  Zach had contact with Philip
 
-Patient zeros: Karl, Lonnie, Olly
-Potential zombies: Paolo
-Neither patient zero nor potential zombie: Shay, Robert, William III, Jack, Mario, Gerald
-Most viral people: Lonnie
-Most contacted people: Mario
+Patient zeros: Bob, Farley, Larry
+Potential zombies: Sarai, Philip
+Neither patient zero nor potential zombie: Leanne, Zach, Mark, Will, Carol, Paul
+Most viral people: Bob
+Most contacted people: Mark, Leanne
 
 Maximum distance from a potential zombie:
-Karl: 3
-Lonnie: 3
-Shay: 2
-William III: 2
-Olly: 2
-Jack: 2
-Robert: 1
-Mario: 1
-Gerald: 1
-Paolo: 0
+Larry: 4
+Bob: 4
+Farley: 3
+Will: 3
+Carol: 3
+Mark: 2
+Paul: 2
+Leanne: 1
+Zach: 1
+Sarai: 0
+Philip: 0
+
+
+Spearder Zombies: Leanne, Zach
+Regular Zombies: None
