@@ -9,18 +9,33 @@ spreaders = set()
 contacted = set()
 spreaderZombie = []
 regularZombies = []
+zombiePreds = []
 
-def zombiePred():
-    pass
+
+def zombiePred(person, spreaders, people):
+    for i in people[person]:
+        if i not in spreaders:
+            return ""
+    if not zombiePreds:
+        zombiePreds.append(person)
+        return person
+    else:
+        return f", {person}"
+            
 
 def regularZombie(people, person, regularZombies):
+    s = False
+    p = False
+    
     for i in people[person]:
-        if i not in neither or i not in potential:
-            return ""
+        if i in spreaders:
+            s = True
+        if i in potential:
+            p = True
+    if not s or not p:
+        return ""
     
-    print(f"{people[person]} {person}")
-    
-    if len(regularZombies) < 1:
+    if not regularZombies:
         regularZombies.append(person)
         return f"{person}"
     else:
@@ -33,7 +48,7 @@ def spreaderZombies(people, person, spreaderZombie):
             return ""
     if len(spreaderZombie) < 1:
         spreaderZombie.append(person)
-        return f"\n\nSpearder Zombies: {person}"
+        return f"\n Spearder Zombies: {person}"
     else:
         spreaderZombie.append(person)
         return f", {person}"
@@ -76,9 +91,10 @@ def highestContacted(mostContacted):
     mostContactedList = [key for key, value in mostContacted.items() if value == highest]
     return ", ".join(mostContactedList)
 
-file = "zombie-input/Dataset1.txt"
+file = "zombie-input/Dataset4.txt"
 
-with open(file, "r") as r, open("outputy.txt", "w") as f:
+part1 = []
+with open(file, "r") as r, open("output.txt", "w") as f:
     f.write("Contact records:\n")
     for line in r:
         line = line.strip()
@@ -87,8 +103,8 @@ with open(file, "r") as r, open("outputy.txt", "w") as f:
         spreaders.add(names[0])
         contacted.update(names[1:])
 
-        contacts = ", ".join(names[1:])
-        f.write(f"  {names[0]} had contact with {contacts}\n")
+        contacts = ", ".join(sorted(names[1:]))
+        part1.append(f"  {names[0]} had contact with {contacts}\n")
 
         people[names[0]] = names[1:]
 
@@ -98,6 +114,9 @@ with open(file, "r") as r, open("outputy.txt", "w") as f:
             mostContacted[i] = 1 + mostContacted.get(i, 0)
         for i in names:
             everyone.add(i)
+
+    for i in sorted(part1):
+        f.write(i)
 
     f.write("\n")
 
@@ -113,17 +132,20 @@ with open(file, "r") as r, open("outputy.txt", "w") as f:
     everyone = list(everyone)
     distances = {}
     for person in everyone:
-        distances[person] = maximumDistance(potential, person, people, set())
-    distances = dict(sorted(distances.items(), key=lambda item: item[1], reverse=True))
+        distances[person] = (maximumDistance(potential, person, people, set()))
+    distances = dict(sorted(distances.items(), key=lambda item: (-item[1], item[0])))
     for key, value in distances.items():
-        f.write(f"{key}: {value}\n")
+        f.write(f" {key}: {value}\n")
+
+    f.write("\nExtra Info:")
     for person in spreaders:
         f.write(f"{spreaderZombies(people, person, spreaderZombie)}")
 
-    f.write("\nRegular Zombies: ")
+    f.write("\n Regular Zombies: ")
     for person in people:
         f.write(f"{regularZombie(people, person, regularZombies)}")
     if not regularZombies:
         f.write("None")
-
-
+    f.write("\n Zombie Predators: ")
+    for person in spreaders:
+        f.write(f"{zombiePred(person, spreaders, people)}")
