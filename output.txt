@@ -1,43 +1,27 @@
 Contact records:
-  Aing had contact with Xing
-  Al had contact with Jimmy, Korra, Morty, Rolli
-  Alice had contact with Aing, Xing
-  Harper had contact with Aing
-  Jam had contact with Sarah, Zufai
-  Jimmy had contact with Zufai
-  Korra had contact with Aing, Xing
-  Morty had contact with Aing, Xing, Zufai
-  Rolli had contact with Aing, Korra, Woerther
-  Sarah had contact with Smith, Zufai
-  Vanessa had contact with Aing, Xing
-  Zhang had contact with Alice, Harper, Rolli, Vanessa
-  Zufai had contact with Smith
+  Gio had contact with Goober
+  Holly had contact with Gio, Lil, Mike, Raonic, Shelly
+  Lil had contact with Gio
+  Mike had contact with Goober
+  Raonic had contact with Goober
+  Shelly had contact with Mike
 
-Patient zeros: Al, Jam, Zhang
-Potential zombies: Smith, Woerther, Xing
-Neither patient zero nor potential zombie: Aing, Alice, Harper, Jimmy, Korra, Morty, Rolli, Sarah, Vanessa, Zufai
-Most viral people: Zhang, Al
-Most contacted people: Aing
+Patient zeros: Holly
+Potential zombies: Goober
+Neither patient zero nor potential zombie: Gio, Lil, Mike, Raonic, Shelly
+Most viral people: Holly
+Most contacted people: Goober
 
 Maximum distance from a potential zombie:
- Al: 4
- Zhang: 4
- Jam: 3
- Rolli: 3
- Alice: 2
- Harper: 2
- Jimmy: 2
- Korra: 2
- Morty: 2
- Sarah: 2
- Vanessa: 2
- Aing: 1
- Zufai: 1
- Smith: 0
- Woerther: 0
- Xing: 0
+ Holly: 3
+ Lil: 2
+ Shelly: 2
+ Gio: 1
+ Mike: 1
+ Raonic: 1
+ Goober: 0
 
 Extra Info:
- Spearder Zombies: Zufai, Aing
- Regular Zombies: Alice, Morty, Rolli, Sarah, Korra, Vanessa
- Zombie Predators: Jimmy, Jam, Al, Harper, Zhang
+ Spearder Zombies: Gio, Raonic, Mike
+ Regular Zombies: None
+ Zombie Predators: Holly, Lil, Shelly
